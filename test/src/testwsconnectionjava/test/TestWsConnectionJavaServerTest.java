@@ -92,19 +92,5 @@ public class TestWsConnectionJavaServerTest {
     }
     
     @Test
-    public void testYourMethod() throws Exception {
-        // Prepare test data using the appropriate uploader for that method (see the KBase function
-        // catalog for help, https://narrative.kbase.us/#catalog/functions)
-        //
-        // Run your method by
-        // YourRetType ret = impl.yourMethod(params, token);
-        //
-        // Check returned data with
-        // Assert.assertEquals(..., ret.getSomeProperty());
-        // ... or other JUnit methods.
-        Map<String, UObject> params = new HashMap<>();
-        params.put("workspace_name", new UObject(getWsName()));
-        params.put("parameter_1", new UObject("Hello World"));
-        final ReportResults ret = impl.runTestWsConnectionJava(params, token, getContext());
-    }
+    public void test() {}
 }

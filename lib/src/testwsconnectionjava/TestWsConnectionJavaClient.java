@@ -164,20 +164,20 @@ public class TestWsConnectionJavaClient {
     }
 
     /**
-     * <p>Original spec-file function name: run_test_ws_connection_java</p>
+     * <p>Original spec-file function name: get_ws_info</p>
      * <pre>
-     * This example function accepts any number of parameters and returns results in a KBaseReport
+     * Returns information about a workspace as per the get_workspace_info method.
      * </pre>
-     * @param   params   instance of mapping from String to unspecified object
-     * @return   parameter "output" of type {@link testwsconnectionjava.ReportResults ReportResults}
+     * @param   wsid   instance of Long
+     * @return   parameter "wsinfo" of unspecified object
      * @throws IOException if an IO exception occurs
      * @throws JsonClientException if a JSON RPC exception occurs
      */
-    public ReportResults runTestWsConnectionJava(Map<String,UObject> params, RpcContext... jsonRpcContext) throws IOException, JsonClientException {
+    public UObject getWsInfo(Long wsid, RpcContext... jsonRpcContext) throws IOException, JsonClientException {
         List<Object> args = new ArrayList<Object>();
-        args.add(params);
-        TypeReference<List<ReportResults>> retType = new TypeReference<List<ReportResults>>() {};
-        List<ReportResults> res = caller.jsonrpcCall("test_ws_connection_java.run_test_ws_connection_java", args, retType, true, true, jsonRpcContext, this.serviceVersion);
+        args.add(wsid);
+        TypeReference<List<UObject>> retType = new TypeReference<List<UObject>>() {};
+        List<UObject> res = caller.jsonrpcCall("test_ws_connection_java.get_ws_info", args, retType, true, true, jsonRpcContext, this.serviceVersion);
         return res.get(0);
     }
 

@@ -3,14 +3,10 @@ A KBase module: test_ws_connection_java
 */
 
 module test_ws_connection_java {
-    typedef structure {
-        string report_name;
-        string report_ref;
-    } ReportResults;
 
     /*
-        This example function accepts any number of parameters and returns results in a KBaseReport
+	Returns information about a workspace as per the get_workspace_info method.
     */
-    funcdef run_test_ws_connection_java(mapping<string,UnspecifiedObject> params) returns (ReportResults output) authentication required;
+    funcdef get_ws_info(int wsid) returns (UnspecifiedObject wsinfo) authentication required;
 
 };
